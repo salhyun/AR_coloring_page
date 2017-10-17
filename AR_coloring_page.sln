@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR_coloring_page", "Assembly-CSharp.csproj", "{0E28A00E-AE22-3BD5-D46F-3E262685C446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR_coloring_page", "Assembly-CSharp-Editor.csproj", "{16FF8DE0-1EC2-4D3D-2823-0A53E1F52B41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E28A00E-AE22-3BD5-D46F-3E262685C446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E28A00E-AE22-3BD5-D46F-3E262685C446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E28A00E-AE22-3BD5-D46F-3E262685C446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E28A00E-AE22-3BD5-D46F-3E262685C446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16FF8DE0-1EC2-4D3D-2823-0A53E1F52B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16FF8DE0-1EC2-4D3D-2823-0A53E1F52B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16FF8DE0-1EC2-4D3D-2823-0A53E1F52B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16FF8DE0-1EC2-4D3D-2823-0A53E1F52B41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

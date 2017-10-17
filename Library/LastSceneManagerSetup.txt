@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/AR_coloring_page.unity
+  isLoaded: 1
+  isActive: 1
