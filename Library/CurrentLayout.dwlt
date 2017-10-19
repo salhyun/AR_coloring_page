@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 4}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 10
+  controlID: 107
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 132
+  controlID: 127
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 67
+  controlID: 46
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -261,7 +261,7 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 19}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -391,14 +391,14 @@ MonoBehaviour:
     width: 1166
     height: 520
   m_SceneLighting: 0
-  lastFramingTime: 510.28445618497784
+  lastFramingTime: 1349.155592232074
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -93.75879, y: 58.63814, z: 9.129906}
+    m_Target: {x: 0, y: 0, z: 500}
     speed: 2
-    m_Value: {x: -93.75879, y: 58.63814, z: 9.129906}
+    m_Value: {x: 0, y: 0, z: 500}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -421,13 +421,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.27969247, y: 0.14390057, z: -0.04244269, w: -0.9482974}
+    m_Target: {x: -0.1313442, y: 0.8401386, z: -0.23415332, w: -0.47126225}
     speed: 2
-    m_Value: {x: -0.27969247, y: 0.14390057, z: -0.04244269, w: -0.9482974}
+    m_Value: {x: -0.1313442, y: 0.8401386, z: -0.23415332, w: -0.47126225}
   m_Size:
-    m_Target: 295.93256
+    m_Target: 1262.1803
     speed: 2
-    m_Value: 295.93256
+    m_Value: 1262.1803
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -494,21 +494,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 78c0ffff14c1ffff52c2ffff1afcffff00000000
+    m_ExpandedIDs: 8889fdff288afdff568bfdffd092fdff7093fdff9e94fdff749afdff149bfdff429cfdffb0a0fdff50a1fdff7ea2fdff44b6fdffe4b6fdff12b8fdffe0bcfdff80bdfdffaebefdff92c4fdff32c5fdff60c6fdff7acbfdff1accfdff48cdfdff54d2fdfff4d2fdff22d4fdfff4e7fdff8ce8fdffbae9fdff00f6fdffa0f6fdffcef7fdff9800feff3801feff6602feff3c20feffd820feff0622feff0628feffa228feffd029feffc82ffeff6430feff9231feff063bfeffa23bfeffd03cfeff0452feffa052feffce53feffda70feff7671feffa472feff8677feff2278feff5079feff0aa5feffa6a5feffd4a6feffac2dffff462effff722fffffe433ffff7e34ffffaa35ffff3e3affffd83affff043cffffee4dffff884effffb44fffff946cffff226dffff4e6effff0885ffff9685ffffc286ffffc8e1ffff56e2ffff82e3ffff70eafffffaeaffff2aecffff1afcffff00000000622f000006300000b83400003e350000b03f0000ba410000ca4100005e42000010470000ac490000484c00000e5400008e560000ac560000f4560000ac6a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: ARCamera
+      m_OriginalName: ARCamera
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 12294
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -583,7 +583,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Editor/QCAR/ImageTargetTextures
+    - Assets/Vuforia/Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -594,7 +594,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: c4050000
     m_LastClickedID: 1476
-    m_ExpandedIDs: 000000004002000072270000902700009c270000ac270000b2270000d6270000d8270000dc270000de2700003028000094280000342900008e29000090290000922900009429000096290000982900009a2900009c290000
+    m_ExpandedIDs: 000000004002000074270000922700009e270000ae270000d0270000d8270000da270000de270000e0270000e4270000e8270000f4270000342800004028000082280000982800007e290000d8290000da290000dc290000de290000e0290000e2290000e4290000e6290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,24 +619,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 4}
+    scrollPos: {x: 0, y: 44.024406}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004002000072270000902700009c270000ac270000b2270000d6270000d8270000dc270000de2700003028000094280000342900008e29000090290000922900009429000096290000982900009a2900009c290000
+    m_ExpandedIDs: 000000004002000074270000922700009e270000ae270000d0270000d8270000da270000de270000e0270000e4270000e8270000f4270000342800004028000082280000982800007e290000d8290000da290000dc290000de290000e0290000e2290000e4290000e6290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: duckTrackableEventHandler
+      m_OriginalName: duckTrackableEventHandler
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 16354
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -699,10 +699,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1125
-    y: 510
-    width: 302
-    height: 548
+    x: 1170
+    y: 522
+    width: 427
+    height: 562
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52

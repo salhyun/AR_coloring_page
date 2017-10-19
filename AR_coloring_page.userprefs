@@ -1,13 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Region_Capture\Scripts\Region_Capture.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UIManager.cs">
     <Files>
-      <File FileName="Assets\Region_Capture\Scripts\Region_Capture.cs" Line="41" Column="64" />
-      <File FileName="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" Line="144" Column="38" />
-      <File FileName="Assets\Region_Capture\Scripts\RC_Extension.cs" Line="18" Column="61" />
-      <File FileName="Assets\Region_Capture\Scripts\RC_Tools.cs" Line="18" Column="9" />
-      <File FileName="Assets\Region_Capture\Samples\ReadMe_Samples.txt" Line="5" Column="42" />
-      <File FileName="Assets\Region_Capture\Samples\GetTexture.cs" Line="17" Column="66" />
+      <File FileName="Assets\Region_Capture\Scripts\Region_Capture.cs" Line="1" Column="1" />
+      <File FileName="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Region_Capture\Scripts\RC_Extension.cs" Line="1" Column="1" />
+      <File FileName="Assets\Region_Capture\Scripts\RC_Tools.cs" Line="1" Column="1" />
+      <File FileName="Assets\Region_Capture\Samples\ReadMe_Samples.txt" Line="1" Column="1" />
+      <File FileName="Assets\Region_Capture\Samples\GetTexture.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UIManager.cs" Line="28" Column="45" />
+      <File FileName="Assets\Scripts\duckTrackableEventHandler.cs" Line="103" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
