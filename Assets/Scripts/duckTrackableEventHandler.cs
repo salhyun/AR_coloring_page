@@ -107,8 +107,11 @@ namespace Vuforia
 			Debug.Log ("ARCamera pos : " + ARCamera.transform.position.ToString ());
 			Debug.Log ("capsule pos : " + capsule.transform.position.ToString ());
 
-			Vector3 pos = ARCamera.transform.position + ARCamera.transform.forward.normalized * 50.0f;
-			duck.transform.position = capsule.transform.position;
+//			Vector3 pos = ARCamera.transform.position + ARCamera.transform.forward.normalized * 50.0f;
+//			duck.transform.position = capsule.transform.position;
+//
+//			GameObject copyDuck = Instantiate(duck, pos, capsule.transform.rotation) as GameObject;
+//			Debug.Log ("copyDuck = " + copyDuck.name);
 		}
 
 		#endregion // PRIVATE_METHODS
