@@ -8,10 +8,16 @@ public class UIManager : MonoBehaviour{
 	public int mClickCount = 0;
 	public GameObject duck;
 	public GameObject capsule;
-	//public Camera arCamera;
 	public GameObject arCamera;
+	public Camera cam;
+
+	public GameObject mBackgroundPlane;
+
+	public bool camPause=true;
 
 	public float mDistFromCamera = 100.0f;
+
+	private Texture defaultTexture=null;
 
 	public void onClickButton()
 	{
@@ -37,8 +43,40 @@ public class UIManager : MonoBehaviour{
 		Debug.Log("CameraLookat (" + lookat.x + ", " + lookat.y + ", " + lookat.z + ")");
 		*/
 
+//		BackgroundPlaneBehaviour bgBehaviour = mBackgroundPlane.GetComponent<BackgroundPlaneBehaviour> ();
+//		bool isActive = bgBehaviour.isActiveAndEnabled;
+//		Debug.Log("backgroundEnable = " + isActive);
+//		if (isActive)
+//			bgBehaviour.enabled = false;
+//		else
+//			bgBehaviour.enabled = true;
+
+		Debug.Log ("width = " + cam.pixelWidth + ", height = " + cam.pixelHeight + ", depth = " + cam.depth);
+
 		Debug.Log ("ARCamera Pos : " + arCamera.transform.position.ToString ());
 		Debug.Log ("ARCamera lookat : " + arCamera.transform.forward.ToString ());
+
+//		bool active = CameraDevice.Instance.IsActive ();
+//		if (active) {
+//			CameraDevice.Instance.Stop ();
+//		}
+//		else
+//			CameraDevice.Instance.Start ();
+
+		VuforiaRenderer.Instance.Pause (camPause);
+		if (camPause) {
+			camPause = false;
+			//VuforiaRenderer.Instance.VideoBackgroundTexture = Resources.Load ("images/150463757969262") as Texture;
+
+			defaultTexture = VuforiaRenderer.Instance.VideoBackgroundTexture;
+
+			Texture ass = Resources.Load ("images/150463757969262") as Texture;
+			VuforiaRenderer.Instance.SetVideoBackgroundTexturePtr (ass, ass.GetNativeTexturePtr ());
+		} else {
+			camPause = true;
+
+			VuforiaRenderer.Instance.SetVideoBackgroundTexturePtr (defaultTexture, defaultTexture.GetNativeTexturePtr ());
+		}
 
 		capsule.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
 		capsule.transform.rotation = arCamera.transform.rotation;
