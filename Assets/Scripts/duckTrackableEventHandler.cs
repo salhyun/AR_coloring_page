@@ -16,15 +16,20 @@ namespace Vuforia
 		public GameObject capsule;
 		public Camera ARCamera;
 
+		private bool bTrackableFound = false;
+
 		#region UNTIY_MONOBEHAVIOUR_METHODS
 
 		void Start()
 		{
+			Debug.Log ("duckTrackableEventHandler Start()");
+
 			mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 			if (mTrackableBehaviour)
 			{
 				mTrackableBehaviour.RegisterTrackableEventHandler(this);
 			}
+			Debug.Log ("mTrackableBehaviour = " + mTrackableBehaviour);
 		}
 
 		#endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -81,6 +86,10 @@ namespace Vuforia
 
 			Debug.Log ("ImageTargetPos : " + this.transform.position.ToString());
 			duck.transform.position = this.transform.position;
+
+			bTrackableFound = true;
+
+			UIManager.Instance.callTest (true);
 		}
 
 
@@ -106,6 +115,14 @@ namespace Vuforia
 			Debug.Log ("ARCamera lookat : " + ARCamera.transform.forward.ToString ());
 			Debug.Log ("ARCamera pos : " + ARCamera.transform.position.ToString ());
 			Debug.Log ("capsule pos : " + capsule.transform.position.ToString ());
+
+			UIManager.Instance.callTest (false);
+
+			if (bTrackableFound) {
+				UIManager.Instance.pauseARCamera (true);
+				bTrackableFound = false;
+			}
+
 
 //			Vector3 pos = ARCamera.transform.position + ARCamera.transform.forward.normalized * 50.0f;
 //			duck.transform.position = capsule.transform.position;

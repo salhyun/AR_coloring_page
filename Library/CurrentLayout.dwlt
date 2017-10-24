@@ -156,7 +156,7 @@ MonoBehaviour:
     y: 30
     width: 2048
     height: 1013
-  m_MinSize: {x: 681, y: 442}
+  m_MinSize: {x: 677, y: 442}
   m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
   controlID: 45
@@ -206,10 +206,10 @@ MonoBehaviour:
     y: 0
     width: 431
     height: 1013
-  m_MinSize: {x: 204, y: 342}
-  m_MaxSize: {x: 4004, y: 8042}
+  m_MinSize: {x: 200, y: 321}
+  m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 109
+  controlID: 80
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -228,8 +228,8 @@ MonoBehaviour:
     y: 0
     width: 431
     height: 430
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -391,14 +391,14 @@ MonoBehaviour:
     width: 1166
     height: 520
   m_SceneLighting: 0
-  lastFramingTime: 19251.431929760838
+  lastFramingTime: 5091.817022727369
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 594.84766, y: 474.0008, z: 70.36841}
+    m_Target: {x: 325.5, y: 217, z: 0}
     speed: 2
-    m_Value: {x: 594.84766, y: 474.0008, z: 70.36841}
+    m_Value: {x: 325.5, y: 217, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -425,9 +425,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.13112392, y: 0.86404055, z: -0.2910379, w: -0.38927823}
   m_Size:
-    m_Target: 5108.806
+    m_Target: 233.34525
     speed: 2
-    m_Value: 5108.806
+    m_Value: 233.34525
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -492,9 +492,9 @@ MonoBehaviour:
     height: 409
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 66390000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: cefbffff1afcffff00000000f0280000f628000044290000
+    m_ExpandedIDs: 0ac3feff9ac3feffc8c4feffa6c8feff36c9feff68cafeff8c23ffff1c24ffff4e25ffffc8ccffff92cdffffc4ceffff38ebffffc2ebfffff4ecffff1afcffff00000000383d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -583,7 +583,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/images
+    - Assets/Vuforia/Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -594,7 +594,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: c4050000
     m_LastClickedID: 1476
-    m_ExpandedIDs: 0000000040020000762700009227000094270000a0270000b0270000d2270000da270000dc270000e0270000e2270000e6270000ea270000f62700003628000042280000842800009a2800007c290000d4290000d6290000d8290000da290000dc290000de290000e0290000e2290000
+    m_ExpandedIDs: 0000000040020000762700009227000094270000b0270000dc270000de270000e2270000e4270000e8270000ec270000f82700000e280000362800003c280000482800008c280000a228000084290000dc290000de290000e0290000e2290000e4290000e6290000e8290000ea290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,10 +619,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 66390000
-    m_LastClickedID: 14694
-    m_ExpandedIDs: 0000000040020000762700009227000094270000b0270000da270000dc270000e0270000e2270000e6270000ea270000f62700003628000042280000842800009a2800007c290000d4290000d6290000d8290000da290000dc290000de290000e0290000e2290000563900005c390000
+    scrollPos: {x: 0, y: 240}
+    m_SelectedIDs: 58070000
+    m_LastClickedID: 1880
+    m_ExpandedIDs: 0000000040020000762700009227000094270000b0270000d4270000dc270000de270000e2270000e4270000e8270000ec270000f82700000e280000362800003c280000482800008c280000a228000084290000dc290000de290000e0290000e2290000e4290000e6290000e8290000ea290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -647,8 +647,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 66390000
-    m_LastClickedInstanceID: 14694
+    m_SelectedInstanceIDs: 58070000
+    m_LastClickedInstanceID: 1880
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
