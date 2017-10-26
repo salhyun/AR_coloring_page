@@ -40,11 +40,6 @@ public class UIManager : MonoBehaviour{
 		mTexAss = Resources.Load ("images/150463757969262") as Texture;
 	}
 
-	public void callTest(bool enable)
-	{
-		Debug.Log ("callTest = " + enable);
-	}
-
 	public void pauseARCamera(bool enable)
 	{
 		VuforiaRenderer.Instance.Pause (enable);

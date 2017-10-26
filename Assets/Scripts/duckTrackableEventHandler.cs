@@ -12,7 +12,7 @@ namespace Vuforia
 
 		#endregion // PRIVATE_MEMBER_VARIABLES
 
-		public GameObject duck;
+		public GameObject targetModel;
 		public GameObject capsule;
 		public Camera ARCamera;
 
@@ -82,14 +82,12 @@ namespace Vuforia
 				component.enabled = true;
 			}
 
-			Debug.Log("duck Trackable " + mTrackableBehaviour.TrackableName + " found");
+			Debug.Log("targetModel Trackable " + mTrackableBehaviour.TrackableName + " found");
 
 			Debug.Log ("ImageTargetPos : " + this.transform.position.ToString());
-			duck.transform.position = this.transform.position;
+			targetModel.transform.position = this.transform.position;
 
 			bTrackableFound = true;
-
-			UIManager.Instance.callTest (true);
 		}
 
 
@@ -116,12 +114,10 @@ namespace Vuforia
 			Debug.Log ("ARCamera pos : " + ARCamera.transform.position.ToString ());
 			Debug.Log ("capsule pos : " + capsule.transform.position.ToString ());
 
-			UIManager.Instance.callTest (false);
-
-			if (bTrackableFound) {
-				UIManager.Instance.pauseARCamera (true);
-				bTrackableFound = false;
-			}
+//			if (bTrackableFound) {
+//				UIManager.Instance.pauseARCamera (true);
+//				bTrackableFound = false;
+//			}
 
 
 //			Vector3 pos = ARCamera.transform.position + ARCamera.transform.forward.normalized * 50.0f;
