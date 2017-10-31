@@ -16,6 +16,8 @@ namespace Vuforia
 		public GameObject capsule;
 		public Camera ARCamera;
 
+		public GameObject childModel=null;
+
 		private bool bTrackableFound = false;
 
 		#region UNTIY_MONOBEHAVIOUR_METHODS
@@ -30,6 +32,15 @@ namespace Vuforia
 				mTrackableBehaviour.RegisterTrackableEventHandler(this);
 			}
 			Debug.Log ("mTrackableBehaviour = " + mTrackableBehaviour);
+
+			Transform[] children = GetComponentsInChildren<Transform> ();
+			foreach (Transform child in children) {
+				//Debug.Log ("child name = " + child.name);
+				if (child.name.Contains ("Box008")) {
+					childModel = child.gameObject;
+					Debug.Log ("childModel name = " + childModel.name);
+				}
+			}
 		}
 
 		#endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -88,6 +99,11 @@ namespace Vuforia
 			targetModel.transform.position = this.transform.position;
 
 			bTrackableFound = true;
+
+			UIManager.Instance.enableButton (true);
+
+			if(childModel)
+				UIManager.Instance.texCameraTarget = childModel.GetComponent<Renderer> ().material.GetTexture ("_MainTex");
 		}
 
 

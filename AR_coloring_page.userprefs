@@ -1,16 +1,40 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Region_Capture\Samples\GetTexture.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UIManager.cs">
     <Files>
       <File FileName="Assets\Region_Capture\Scripts\Region_Capture.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Scripts\RC_Extension.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Scripts\RC_Tools.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Samples\ReadMe_Samples.txt" Line="1" Column="1" />
-      <File FileName="Assets\Region_Capture\Samples\GetTexture.cs" Line="34" Column="41" />
-      <File FileName="Assets\Scripts\UIManager.cs" Line="42" Column="1" />
-      <File FileName="Assets\Scripts\duckTrackableEventHandler.cs" Line="127" Column="48" />
+      <File FileName="Assets\Region_Capture\Samples\GetTexture.cs" Line="39" Column="3" />
+      <File FileName="Assets\Scripts\UIManager.cs" Line="68" Column="3" />
+      <File FileName="Assets\Scripts\duckTrackableEventHandler.cs" Line="109" Column="3" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AR_coloring_page" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Region_Capture" expanded="True">
+                <Node name="Samples" expanded="True" />
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="UIManager.cs" selected="True" />
+              </Node>
+              <Node name="Vuforia" expanded="True">
+                <Node name="Scripts" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="AR_coloring_page" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

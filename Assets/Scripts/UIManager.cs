@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour{
 	public GameObject capsule;
 	public GameObject arCamera;
 	public Camera cam;
+	public GameObject button;
 
 	public GameObject mBackgroundPlane;
 	public Texture mTexAss;
@@ -17,6 +18,8 @@ public class UIManager : MonoBehaviour{
 	public bool camPause=true;
 
 	public float mDistFromCamera = 100.0f;
+
+	public Texture texCameraTarget=null;
 
 	private Texture defaultTexture=null;
 
@@ -38,6 +41,14 @@ public class UIManager : MonoBehaviour{
 	void Start()
 	{
 		mTexAss = Resources.Load ("images/150463757969262") as Texture;
+
+		//enableButton (false);
+	}
+
+	public void enableButton(bool enable)
+	{
+		button.SetActive (enable);
+		Debug.Log ("button Active=" + button.activeSelf);
 	}
 
 	public void pauseARCamera(bool enable)
@@ -53,6 +64,12 @@ public class UIManager : MonoBehaviour{
 		}
 	}
 
+	public void centerPosition(GameObject obj)
+	{
+		obj.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
+		obj.transform.rotation = arCamera.transform.rotation;
+	}
+
 	public void onClickButton()
 	{
 
@@ -61,14 +78,17 @@ public class UIManager : MonoBehaviour{
 		Debug.Log ("ARCamera Pos : " + arCamera.transform.position.ToString ());
 		Debug.Log ("ARCamera lookat : " + arCamera.transform.forward.ToString ());
 
-		pauseARCamera (false);
-		if (camPause)
-			camPause = false;
-		else
-			camPause = true;
+//		pauseARCamera (camPause);
+//		if (camPause)
+//			camPause = false;
+//		else
+//			camPause = true;
 
 		capsule.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
 		capsule.transform.rotation = arCamera.transform.rotation;
+
+		if(texCameraTarget)
+			capsule.GetComponent<Renderer>().material.SetTexture("_MainTex", texCameraTarget);
 
 		Debug.Log ("onClickButton count = " + mClickCount);
 		mClickCount++;

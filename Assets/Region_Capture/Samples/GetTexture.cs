@@ -35,8 +35,6 @@ public class GetTexture : MonoBehaviour {
 
 	}
 
-
-
 	void LateUpdate () {
 
 		if (FreezeEnable && monobehaviour.MarkerIsOUT)
