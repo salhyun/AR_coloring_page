@@ -42,4 +42,9 @@ public class GetTexture : MonoBehaviour {
 
 		else RenderTextureCamera.enabled = true;
 		}
+
+	public RenderTexture getRenderTexture() 
+	{
+		return RenderTextureCamera.targetTexture;
+	}
 }

@@ -58,6 +58,7 @@
      <Compile Include="Assets\Region_Capture\Scripts\Region_Capture.cs" />
      <Compile Include="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" />
      <Compile Include="Assets\Scripts\duckTrackableEventHandler.cs" />
+     <Compile Include="Assets\Scripts\FramePerSec.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />

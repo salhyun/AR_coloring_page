@@ -16,8 +16,6 @@ namespace Vuforia
 		public GameObject capsule;
 		public Camera ARCamera;
 
-		public GameObject childModel=null;
-
 		private bool bTrackableFound = false;
 
 		#region UNTIY_MONOBEHAVIOUR_METHODS
@@ -33,14 +31,8 @@ namespace Vuforia
 			}
 			Debug.Log ("mTrackableBehaviour = " + mTrackableBehaviour);
 
-			Transform[] children = GetComponentsInChildren<Transform> ();
-			foreach (Transform child in children) {
-				//Debug.Log ("child name = " + child.name);
-				if (child.name.Contains ("Box008")) {
-					childModel = child.gameObject;
-					Debug.Log ("childModel name = " + childModel.name);
-				}
-			}
+			ImageTargetBehaviour imageTarget = GetComponent<ImageTargetBehaviour> ();
+			Debug.LogFormat ("imageTarget name = ", imageTarget);
 		}
 
 		#endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -96,14 +88,16 @@ namespace Vuforia
 			Debug.Log("targetModel Trackable " + mTrackableBehaviour.TrackableName + " found");
 
 			Debug.Log ("ImageTargetPos : " + this.transform.position.ToString());
-			targetModel.transform.position = this.transform.position;
+			//targetModel.transform.position = this.transform.position;
 
 			bTrackableFound = true;
 
 			UIManager.Instance.enableButton (true);
 
-			if(childModel)
-				UIManager.Instance.texCameraTarget = childModel.GetComponent<Renderer> ().material.GetTexture ("_MainTex");
+			//30프레임 기준으로 InvokeTime 계산
+			float invokeTime = 10.0f / FramePerSec.Instance.FPS;
+			Debug.Log ("invokeTime = " + invokeTime);
+			Invoke ("copyARCameraTexture", invokeTime);
 		}
 
 
@@ -128,21 +122,45 @@ namespace Vuforia
 
 			Debug.Log ("ARCamera lookat : " + ARCamera.transform.forward.ToString ());
 			Debug.Log ("ARCamera pos : " + ARCamera.transform.position.ToString ());
-			Debug.Log ("capsule pos : " + capsule.transform.position.ToString ());
 
-//			if (bTrackableFound) {
-//				UIManager.Instance.pauseARCamera (true);
-//				bTrackableFound = false;
-//			}
-
-
-//			Vector3 pos = ARCamera.transform.position + ARCamera.transform.forward.normalized * 50.0f;
-//			duck.transform.position = capsule.transform.position;
-//
-//			GameObject copyDuck = Instantiate(duck, pos, capsule.transform.rotation) as GameObject;
-//			Debug.Log ("copyDuck = " + copyDuck.name);
+			UIManager.Instance.copyCameraTexture (targetModel);
 		}
 
+		public void copyARCameraTexture()
+		{
+			if (targetModel) {
+				GetTexture getTex = targetModel.GetComponentInChildren<GetTexture> ();
+
+				RenderTexture rt = getTex.getRenderTexture ();
+				Debug.Log("Render Texture width = " + rt.width + ", height = " + rt.height + ", format = " + rt.format.ToString());
+
+				var oldRT = RenderTexture.active;
+
+				var tex = new Texture2D (rt.width, rt.height, TextureFormat.ARGB32, false);
+				RenderTexture.active = rt;
+				tex.ReadPixels (new Rect (0, 0, rt.width, rt.height), 0, 0);
+				tex.Apply ();
+				UIManager.Instance.texCameraTarget = tex;
+
+				RenderTexture.active = oldRT;
+
+				if (UIManager.Instance.copyTargetModel) {
+					Destroy (UIManager.Instance.copyTargetModel);
+					UIManager.Instance.copyTargetModel = null;
+				}
+
+				//clone TargetModel
+				if (UIManager.Instance.copyTargetModel == null) {
+					Vector3 pos = targetModel.transform.position;
+					pos.x += 35.0f;
+					UIManager.Instance.copyTargetModel = Instantiate (targetModel, pos, Quaternion.identity) as GameObject;
+					UIManager.Instance.copyTargetModel.transform.localScale = Vector3.Scale (targetModel.transform.parent.localScale, targetModel.transform.localScale);//부모의 Scale도 계산해준다.
+				}
+
+				Debug.Log ("GET " + mTrackableBehaviour.TrackableName + " Camera Texture");
+			}
+		}
 		#endregion // PRIVATE_METHODS
 	}
+
 }

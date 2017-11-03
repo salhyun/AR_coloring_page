@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour{
 	public GameObject arCamera;
 	public Camera cam;
 	public GameObject button;
+	public GameObject copyTargetModel;
 
 	public GameObject mBackgroundPlane;
 	public Texture mTexAss;
@@ -78,19 +80,43 @@ public class UIManager : MonoBehaviour{
 		Debug.Log ("ARCamera Pos : " + arCamera.transform.position.ToString ());
 		Debug.Log ("ARCamera lookat : " + arCamera.transform.forward.ToString ());
 
+		//copyARCameraTexture();
+		//copyCameraTexture ();
+
 //		pauseARCamera (camPause);
 //		if (camPause)
 //			camPause = false;
 //		else
 //			camPause = true;
 
-		capsule.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
-		capsule.transform.rotation = arCamera.transform.rotation;
+		Vector3 pos = duck.transform.position;
+		pos.x += 30.0f;
+		Quaternion rot = duck.transform.rotation;
 
-		if(texCameraTarget)
-			capsule.GetComponent<Renderer>().material.SetTexture("_MainTex", texCameraTarget);
+		GameObject copyDuck = Instantiate (duck, pos, rot) as GameObject;
 
 		Debug.Log ("onClickButton count = " + mClickCount);
 		mClickCount++;
+	}
+
+	public void copyCameraTexture(GameObject targetModel)
+	{
+		if (texCameraTarget) {
+
+			capsule.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
+			capsule.transform.rotation = arCamera.transform.rotation;
+
+			capsule.GetComponent<Renderer> ().material.SetTexture ("_MainTex", texCameraTarget);
+
+			if (copyTargetModel) {
+				copyTargetModel.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
+				copyTargetModel.transform.rotation = arCamera.transform.rotation;
+
+				copyTargetModel.GetComponentInChildren<Renderer> ().material.SetTexture ("_MainTex", texCameraTarget);
+			}
+
+			Debug.Log ("SetTexture (\"_MainTex\", texCameraTarget)");
+			texCameraTarget = null;
+		}
 	}
 }
