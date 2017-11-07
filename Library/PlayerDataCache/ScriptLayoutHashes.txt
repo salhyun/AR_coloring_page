@@ -100,7 +100,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 71af29a181e07b4ffb5c8646213ff937 Assembly-CSharp.dll:.Region_Capture
 afa5f3a2113b51574ea7bdeaccb3e189 Assembly-CSharp.dll:Vuforia.MarkerBehaviour
-431228a6434b61141791b0ce2006a935 Assembly-CSharp.dll:.UIManager
+e029a5a330d31d1de325528d6cf0cda6 Assembly-CSharp.dll:.UIManager
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery

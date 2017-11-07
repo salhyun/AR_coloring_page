@@ -25,6 +25,21 @@ public class UIManager : MonoBehaviour{
 
 	private Texture defaultTexture=null;
 
+	public GameObject canvas;
+	public GameObject panelSetting;
+	public GameObject btnSetting;
+	public GameObject btnCloseSetting;
+	public GameObject btnHelpAR;
+	public GameObject btnHelpHolo;
+	public GameObject btnHelpExp;
+
+	public GameObject panelHelp;
+	public GameObject btnCloseHelp;
+
+	private SlidingAnimation mSlidingPanel;
+
+	public float SlidingDist=800.0f;
+
 	private static UIManager instance;
 	public static UIManager Instance
 	{
@@ -40,11 +55,40 @@ public class UIManager : MonoBehaviour{
 		}
 	}
 
+	void Awake()
+	{
+		//Screen.SetResolution (1080, 1920, true);
+		Debug.Log ("SCREEN width = " + Screen.width + ", height = " + Screen.height + ", DPI = " + Screen.dpi);
+	}
+
 	void Start()
 	{
 		mTexAss = Resources.Load ("images/150463757969262") as Texture;
 
 		//enableButton (false);
+
+		mSlidingPanel = new SlidingAnimation ();
+
+		RectTransform rt = canvas.GetComponent<RectTransform> ();
+		Debug.Log ("CANVAS width = " + rt.rect.width + ", height = " + rt.rect.height);
+	}
+
+	void Update()
+	{
+		if (mSlidingPanel.getActive ()) {
+			mSlidingPanel.process ();
+
+			Vector3 pos = mSlidingPanel.mSlidingObject.transform.position;
+			pos.x = mSlidingPanel.currentValue;
+			mSlidingPanel.mSlidingObject.transform.position = pos;
+
+			if (mSlidingPanel.mButtonObject) {
+				UnityEngine.UI.Image img = mSlidingPanel.mButtonObject.GetComponent<UnityEngine.UI.Image> ();
+				Color color = img.color;
+				color.a = 1.0f - mSlidingPanel.curveValue;
+				img.color = color;
+			}
+		}
 	}
 
 	public void enableButton(bool enable)
@@ -109,7 +153,12 @@ public class UIManager : MonoBehaviour{
 			capsule.GetComponent<Renderer> ().material.SetTexture ("_MainTex", texCameraTarget);
 
 			if (copyTargetModel) {
-				copyTargetModel.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
+
+				Camera cam = arCamera.GetComponentInChildren<Camera> ();
+				Vector3 pos = cam.transform.localToWorldMatrix.MultiplyPoint (new Vector3 (0.0f, -40.0f, 0.0f));
+
+				//copyTargetModel.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
+				copyTargetModel.transform.position = pos + arCamera.transform.forward.normalized * mDistFromCamera;
 				copyTargetModel.transform.rotation = arCamera.transform.rotation;
 
 				copyTargetModel.GetComponentInChildren<Renderer> ().material.SetTexture ("_MainTex", texCameraTarget);
@@ -119,4 +168,53 @@ public class UIManager : MonoBehaviour{
 			texCameraTarget = null;
 		}
 	}
+
+	public void onClickSetting()
+	{
+		mSlidingPanel.reset (true, panelSetting.transform.position.x, (float)Screen.width / 2.0f, 0.5f);
+		mSlidingPanel.mSlidingObject = panelSetting;
+		mSlidingPanel.mButtonObject = btnSetting;
+	}
+	public void onClickCloseSetting()
+	{
+		mSlidingPanel.reset (true, panelSetting.transform.position.x, panelSetting.transform.position.x-Screen.width*2.0f, 0.5f);
+		mSlidingPanel.mSlidingObject = panelSetting;
+		mSlidingPanel.mButtonObject = btnSetting;
+	}
+	public void onClickHelpAR()
+	{
+		mSlidingPanel.reset (true, panelHelp.transform.position.x, (float)Screen.width / 2.0f, 0.5f);
+		mSlidingPanel.mSlidingObject = panelHelp;
+		mSlidingPanel.mButtonObject = null;
+	}
+	public void onClickCloseHelpAR()
+	{
+		mSlidingPanel.reset (true, panelHelp.transform.position.x, panelHelp.transform.position.x-(float)Screen.width*2.0f, 0.5f);
+		mSlidingPanel.mSlidingObject = panelHelp;
+		mSlidingPanel.mButtonObject = null;
+	}
+	public void onClickHelpHolo()
+	{
+	}
+	public void onClickHelpExp()
+	{
+	}
+
+	void OnGUI()
+	{
+		int w = Screen.width, h = Screen.height;
+
+		int posX = 0, posY = h * 15 / 100;
+		int fontHeight = 3;
+
+		GUIStyle style = new GUIStyle ();
+		Rect rect = new Rect (posX, posY, w, h * fontHeight / 100);
+		style.alignment = TextAnchor.UpperLeft;
+		style.fontSize = h * fontHeight / 100;
+		style.normal.textColor = new Color (1.0f, 1.0f, 0.0f, 1.0f);
+
+		string text = string.Format ("screen(" + w + ", " + h + "), panel x = " + panelSetting.transform.position.x);
+		GUI.Label (rect, text, style);
+	}
+
 }

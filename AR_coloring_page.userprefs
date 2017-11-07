@@ -1,16 +1,35 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\duckTrackableEventHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UIManager.cs">
     <Files>
       <File FileName="Assets\Region_Capture\Scripts\Region_Capture.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Scripts\RC_Extension.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Scripts\RC_Tools.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Samples\GetTexture.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UIManager.cs" Line="102" Column="55" />
-      <File FileName="Assets\Scripts\duckTrackableEventHandler.cs" Line="146" Column="5" />
-      <File FileName="Assets\Scripts\FramePerSec.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UIManager.cs" Line="83" Column="58" />
+      <File FileName="Assets\Scripts\duckTrackableEventHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FramePerSec.cs" Line="31" Column="28" />
+      <File FileName="Assets\Scripts\SlidingAnimation.cs" Line="23" Column="3" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AR_coloring_page" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="UIManager.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="AR_coloring_page" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
