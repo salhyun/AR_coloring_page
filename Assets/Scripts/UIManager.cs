@@ -135,11 +135,11 @@ public class UIManager : MonoBehaviour{
 //		else
 //			camPause = true;
 
-		Vector3 pos = duck.transform.position;
-		pos.x += 30.0f;
-		Quaternion rot = duck.transform.rotation;
-
-		GameObject copyDuck = Instantiate (duck, pos, rot) as GameObject;
+//		Vector3 pos = duck.transform.position;
+//		pos.x += 30.0f;
+//		Quaternion rot = duck.transform.rotation;
+//
+//		GameObject copyDuck = Instantiate (duck, pos, rot) as GameObject;
 
 		Debug.Log ("onClickButton count = " + mClickCount);
 		mClickCount++;

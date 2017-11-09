@@ -57,6 +57,7 @@
      <Compile Include="Assets\Region_Capture\Scripts\RC_Tools.cs" />
      <Compile Include="Assets\Region_Capture\Scripts\Region_Capture.cs" />
      <Compile Include="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" />
+     <Compile Include="Assets\Scripts\ButtonAnimation.cs" />
      <Compile Include="Assets\Scripts\duckTrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\FramePerSec.cs" />
      <Compile Include="Assets\Scripts\MyResources.cs" />
