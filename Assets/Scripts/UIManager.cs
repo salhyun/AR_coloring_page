@@ -63,6 +63,8 @@ public class UIManager : MonoBehaviour{
 
 	void Start()
 	{
+		MyResources.Instance.initialize ();
+		
 		mTexAss = Resources.Load ("images/150463757969262") as Texture;
 
 		//enableButton (false);
@@ -183,6 +185,8 @@ public class UIManager : MonoBehaviour{
 	}
 	public void onClickHelpAR()
 	{
+		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(0);
+
 		mSlidingPanel.reset (true, panelHelp.transform.position.x, (float)Screen.width / 2.0f, 0.5f);
 		mSlidingPanel.mSlidingObject = panelHelp;
 		mSlidingPanel.mButtonObject = null;
@@ -195,9 +199,20 @@ public class UIManager : MonoBehaviour{
 	}
 	public void onClickHelpHolo()
 	{
+		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(1);
+
+		mSlidingPanel.reset (true, panelHelp.transform.position.x, (float)Screen.width / 2.0f, 0.5f);
+		mSlidingPanel.mSlidingObject = panelHelp;
+		mSlidingPanel.mButtonObject = null;
 	}
+
 	public void onClickHelpExp()
 	{
+		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(2);
+
+		mSlidingPanel.reset (true, panelHelp.transform.position.x, (float)Screen.width / 2.0f, 0.5f);
+		mSlidingPanel.mSlidingObject = panelHelp;
+		mSlidingPanel.mButtonObject = null;
 	}
 
 	void OnGUI()
