@@ -84,11 +84,17 @@ public class UIManager : MonoBehaviour{
 			pos.x = mSlidingPanel.currentValue;
 			mSlidingPanel.mSlidingObject.transform.position = pos;
 
-			if (mSlidingPanel.mButtonObject) {
-				UnityEngine.UI.Image img = mSlidingPanel.mButtonObject.GetComponent<UnityEngine.UI.Image> ();
-				Color color = img.color;
-				color.a = 1.0f - mSlidingPanel.curveValue;
-				img.color = color;
+//			if (mSlidingPanel.mButtonObject) {
+//				UnityEngine.UI.Image img = mSlidingPanel.mButtonObject.GetComponent<UnityEngine.UI.Image> ();
+//				Color color = img.color;
+//				color.a = 1.0f - mSlidingPanel.curveValue;
+//				img.color = color;
+//			}
+		}
+
+		if (Application.platform == RuntimePlatform.Android) {
+			if (Input.GetKey (KeyCode.Escape)) {
+				Application.Quit ();
 			}
 		}
 	}

@@ -15,6 +15,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 a9ceaad7d51aada88335b5bf9c0e71a4 Assembly-CSharp.dll:Vuforia.ReconstructionBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.TurnOffBehaviour
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MyResources
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.GLErrorHandler
 823583c11358e07768d52ed2293185d2 Assembly-CSharp.dll:Vuforia.DatabaseLoadBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.ComponentFactoryStarterBehaviour
@@ -172,6 +173,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 2ddcd5a57eedd87b5634856fdc49835e Assembly-CSharp.dll:.RC_Tools
 69d7d01d14b2cb1bf7ea22ff94f3abfc Assembly-CSharp.dll:Vuforia.DefaultSmartTerrainEventHandler
+e84542cb3e92e4144628f75925043808 Assembly-CSharp.dll:.ButtonAnimation
 d2a2bd333db22f480a8589e167314ecc Assembly-CSharp.dll:Vuforia.UserDefinedTargetBuildingBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.DistortionRenderingBehaviour
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MyResources

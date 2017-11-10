@@ -7,13 +7,34 @@
       <File FileName="Assets\Region_Capture\Scripts\RC_Extension.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Scripts\RC_Tools.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Samples\GetTexture.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UIManager.cs" Line="99" Column="4" />
       <File FileName="Assets\Scripts\duckTrackableEventHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FramePerSec.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FramePerSec.cs" Line="47" Column="36" />
       <File FileName="Assets\Scripts\SlidingAnimation.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MyResources.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ButtonAnimation.cs" Line="18" Column="32" />
+      <File FileName="Assets\Scripts\ButtonAnimation.cs" Line="66" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AR_coloring_page" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Region_Capture" expanded="True">
+                <Node name="Scripts" expanded="True" />
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="ButtonAnimation.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="AR_coloring_page" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
