@@ -88,7 +88,7 @@ ModelImporter:
     400078: Box008
     400080: effect03
     4300000: Box008
-    7400000: Take 001
+    7400000: Yeji Take 001
     9500000: //RootNode
     13700000: Box008
   materials:
@@ -116,7 +116,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Yeji Take 001
       takeName: Take 001
       firstFrame: 0
       lastFrame: 204

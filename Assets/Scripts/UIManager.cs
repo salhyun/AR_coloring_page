@@ -169,7 +169,11 @@ public class UIManager : MonoBehaviour{
 				copyTargetModel.transform.position = pos + arCamera.transform.forward.normalized * mDistFromCamera;
 				copyTargetModel.transform.rotation = arCamera.transform.rotation;
 
-				copyTargetModel.GetComponentInChildren<Renderer> ().material.SetTexture ("_MainTex", texCameraTarget);
+				Renderer []meshes = copyTargetModel.GetComponentsInChildren<Renderer> ();
+				foreach (Renderer mesh in meshes) {
+					mesh.material.SetTexture ("_MainTex", texCameraTarget);
+				}
+				//copyTargetModel.GetComponentInChildren<Renderer> ().material.SetTexture ("_MainTex", texCameraTarget);
 			}
 
 			Debug.Log ("SetTexture (\"_MainTex\", texCameraTarget)");

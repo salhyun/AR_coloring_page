@@ -94,12 +94,12 @@ namespace Vuforia
 
 			UIManager.Instance.enableButton (true);
 
+			//turn off for a while
 			//30프레임 기준으로 InvokeTime 계산
 			float invokeTime = 10.0f / FramePerSec.Instance.FPS;
 			Debug.Log ("invokeTime = " + invokeTime);
 			Invoke ("copyARCameraTexture", invokeTime);
 		}
-
 
 		private void OnTrackingLost()
 		{
@@ -123,7 +123,7 @@ namespace Vuforia
 			Debug.Log ("ARCamera lookat : " + ARCamera.transform.forward.ToString ());
 			Debug.Log ("ARCamera pos : " + ARCamera.transform.position.ToString ());
 
-			UIManager.Instance.copyCameraTexture (targetModel);
+			UIManager.Instance.copyCameraTexture (targetModel); //turn off for a while
 		}
 
 		public void copyARCameraTexture()
