@@ -6,6 +6,7 @@ public class FramePerSec : MonoBehaviour {
 
 	float deltaTime = 0.0f;
 	int fontHeight = 5;
+	float mMilSec;
 	float mFps;
 
 	private static FramePerSec instance;
@@ -34,6 +35,9 @@ public class FramePerSec : MonoBehaviour {
 	void Update()
 	{
 		deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+
+		mMilSec = deltaTime * 1000.0f;
+		mFps = 1.0f / deltaTime;
 	}
 	void OnGUI()
 	{
@@ -44,9 +48,7 @@ public class FramePerSec : MonoBehaviour {
 		style.alignment = TextAnchor.UpperLeft;
 		style.fontSize = h * fontHeight / 100;
 		style.normal.textColor = new Color (1.0f, 1.0f, 0.0f, 1.0f);
-		float msec = deltaTime * 1000.0f;
-		mFps = 1.0f / deltaTime;
-		string text = string.Format ("{0:0.0} ms ({1:0.} fps)", msec, mFps);
+		string text = string.Format ("{0:0.0} ms ({1:0.} fps)", mMilSec, mFps);
 		GUI.Label (rect, text, style);
 	}
 }

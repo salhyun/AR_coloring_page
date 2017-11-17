@@ -57,12 +57,14 @@
      <Compile Include="Assets\Region_Capture\Scripts\RC_Tools.cs" />
      <Compile Include="Assets\Region_Capture\Scripts\Region_Capture.cs" />
      <Compile Include="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" />
+     <Compile Include="Assets\Scripts\BetterToggleGroup.cs" />
      <Compile Include="Assets\Scripts\ButtonAnimation.cs" />
      <Compile Include="Assets\Scripts\duckTrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\FramePerSec.cs" />
      <Compile Include="Assets\Scripts\MyResources.cs" />
      <Compile Include="Assets\Scripts\SlidingAnimation.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
+     <Compile Include="Assets\Scripts\VoiceClips.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
@@ -115,9 +117,9 @@
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\Region_Capture\Shaders\Set_Matrix_To_Material.shader" />
      <None Include="Assets\StreamingAssets\QCAR\AR_coloring_page.xml" />
-     <None Include="Assets\StreamingAssets\Vuforia\testAR.xml" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
+     <None Include="Assets\StreamingAssets\Vuforia\testAR.xml" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\readme_SDK.txt" />

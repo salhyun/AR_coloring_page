@@ -1,26 +1,31 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UIManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\duckTrackableEventHandler.cs">
     <Files>
       <File FileName="Assets\Region_Capture\Scripts\Region_Capture.cs" Line="1" Column="1" />
-      <File FileName="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Region_Capture\Scripts\RenderTextureCamera.cs" Line="163" Column="9" />
       <File FileName="Assets\Region_Capture\Scripts\RC_Extension.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Scripts\RC_Tools.cs" Line="1" Column="1" />
       <File FileName="Assets\Region_Capture\Samples\GetTexture.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UIManager.cs" Line="158" Column="119" />
-      <File FileName="Assets\Scripts\duckTrackableEventHandler.cs" Line="148" Column="51" />
-      <File FileName="Assets\Scripts\FramePerSec.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SlidingAnimation.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MyResources.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UIManager.cs" Line="279" Column="3" />
+      <File FileName="Assets\Scripts\duckTrackableEventHandler.cs" Line="153" Column="46" />
+      <File FileName="Assets\Scripts\FramePerSec.cs" Line="16" Column="27" />
+      <File FileName="Assets\Scripts\MyResources.cs" Line="22" Column="58" />
       <File FileName="Assets\Scripts\ButtonAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SlidingAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VoiceClips.cs" Line="9" Column="1" />
+      <File FileName="Assets\Scripts\BetterToggleGroup.cs" Line="19" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AR_coloring_page" expanded="True">
             <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Region_Capture" expanded="True">
+                <Node name="Scripts" expanded="True" />
+              </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="UIManager.cs" selected="True" />
+                <Node name="duckTrackableEventHandler.cs" selected="True" />
               </Node>
             </Node>
             <Node name="Assembly-CSharp-Editor" expanded="True" />

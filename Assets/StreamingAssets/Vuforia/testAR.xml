@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="02" size="180.000000 254.612900" />
-    <ImageTarget name="01" size="180.000000 254.612900" />
-    <ImageTarget name="yeji" size="180.000000 254.612900" />
-    <ImageTarget name="illgirl001" size="100.000000 148.888885" />
-    <ImageTarget name="unity_chan_01" size="180.000000 81.243240" />
+    <ImageTarget name="30" size="180.000000 254.612900" />
+    <ImageTarget name="29" size="180.000000 254.612900" />
+    <ImageTarget name="28_tt" size="180.000000 254.531250" />
+    <ImageTarget name="27_pointline" size="180.000000 254.531250" />
+    <ImageTarget name="26" size="180.000000 254.531250" />
+    <ImageTarget name="25" size="180.000000 254.531250" />
+    <ImageTarget name="24" size="180.000000 254.531250" />
+    <ImageTarget name="23" size="180.000000 254.531250" />
+    <ImageTarget name="22" size="180.000000 254.531250" />
+    <ImageTarget name="21" size="180.000000 254.531250" />
+    <ImageTarget name="20" size="180.000000 254.531250" />
+    <ImageTarget name="19" size="180.000000 254.531250" />
+    <ImageTarget name="18" size="180.000000 254.531250" />
+    <ImageTarget name="17" size="180.000000 254.531250" />
+    <ImageTarget name="16" size="180.000000 254.531250" />
+    <ImageTarget name="15" size="180.000000 254.531250" />
+    <ImageTarget name="14" size="180.000000 254.531250" />
+    <ImageTarget name="13" size="180.000000 254.531250" />
+    <ImageTarget name="12" size="180.000000 254.531250" />
+    <ImageTarget name="11" size="180.000000 254.531250" />
+    <ImageTarget name="10" size="180.000000 254.531250" />
+    <ImageTarget name="09" size="180.000000 254.531250" />
+    <ImageTarget name="08" size="180.000000 254.531250" />
+    <ImageTarget name="07" size="180.000000 254.531250" />
+    <ImageTarget name="06" size="180.000000 254.531250" />
+    <ImageTarget name="05" size="180.000000 254.531250" />
+    <ImageTarget name="04" size="180.000000 254.531250" />
+    <ImageTarget name="03" size="180.000000 254.531250" />
+    <ImageTarget name="02" size="180.000000 254.531250" />
+    <ImageTarget name="01" size="180.000000 254.531250" />
   </Tracking>
 </QCARConfig>

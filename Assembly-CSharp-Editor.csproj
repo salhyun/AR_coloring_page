@@ -66,9 +66,9 @@
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\Region_Capture\Shaders\Set_Matrix_To_Material.shader" />
      <None Include="Assets\StreamingAssets\QCAR\AR_coloring_page.xml" />
-     <None Include="Assets\StreamingAssets\Vuforia\testAR.xml" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
+     <None Include="Assets\StreamingAssets\Vuforia\testAR.xml" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\readme_SDK.txt" />

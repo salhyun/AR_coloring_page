@@ -13,7 +13,6 @@ namespace Vuforia
 		#endregion // PRIVATE_MEMBER_VARIABLES
 
 		public GameObject targetModel;
-		public GameObject capsule;
 		public Camera ARCamera;
 
 		private bool bTrackableFound = false;
@@ -33,6 +32,7 @@ namespace Vuforia
 
 			ImageTargetBehaviour imageTarget = GetComponent<ImageTargetBehaviour> ();
 			Debug.LogFormat ("imageTarget name = ", imageTarget);
+
 		}
 
 		#endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -94,6 +94,16 @@ namespace Vuforia
 
 			UIManager.Instance.enableButton (true);
 
+			if (UIManager.Instance.copyTargetModel) {
+				UIManager.Instance.enableCopyTargetModel = false;				
+				Destroy (UIManager.Instance.copyTargetModel);
+				UIManager.Instance.copyTargetModel = null;
+
+				AudioSource audio = UIManager.Instance.GetComponent<AudioSource> ();
+				if (audio.isPlaying)
+					audio.Stop ();
+			}
+
 			//turn off for a while
 			//30프레임 기준으로 InvokeTime 계산
 			float invokeTime = 10.0f / FramePerSec.Instance.FPS;
@@ -144,6 +154,8 @@ namespace Vuforia
 
 				RenderTexture.active = oldRT;
 
+				UIManager.Instance.saveJPG (tex, mTrackableBehaviour.TrackableName + ".jpg");
+
 				if (UIManager.Instance.copyTargetModel) {
 					Destroy (UIManager.Instance.copyTargetModel);
 					UIManager.Instance.copyTargetModel = null;
@@ -152,7 +164,8 @@ namespace Vuforia
 				//clone TargetModel
 				if (UIManager.Instance.copyTargetModel == null) {
 					Vector3 pos = targetModel.transform.position;
-					pos.x += 35.0f;
+					pos.x += 3500.0f;
+
 					UIManager.Instance.copyTargetModel = Instantiate (targetModel, pos, Quaternion.identity) as GameObject;
 					UIManager.Instance.copyTargetModel.transform.localScale = Vector3.Scale (targetModel.transform.parent.localScale, targetModel.transform.localScale);//부모의 Scale도 계산해준다.
 				}

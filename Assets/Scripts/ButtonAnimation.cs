@@ -62,11 +62,11 @@ public class ButtonAnimation : MonoBehaviour {
 
 		if (delta >= 1.0f) {
 			bAnimation = false;
-			restoreButton ();
+			//restoreButton ();
 		}
 	}
 
-	void restoreButton()
+	public void restoreButton()
 	{
 		this.transform.localScale = originScale;
 		this.transform.rotation = new Quaternion ();

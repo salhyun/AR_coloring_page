@@ -101,7 +101,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 71af29a181e07b4ffb5c8646213ff937 Assembly-CSharp.dll:.Region_Capture
 afa5f3a2113b51574ea7bdeaccb3e189 Assembly-CSharp.dll:Vuforia.MarkerBehaviour
-e029a5a330d31d1de325528d6cf0cda6 Assembly-CSharp.dll:.UIManager
+8eab79151b24f2efc06579fe9901cbca Assembly-CSharp.dll:.UIManager
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -135,6 +135,7 @@ eaa1ec373f38cf134af6cf2fda6688e1 Assembly-CSharp.dll:Vuforia.VuforiaBehaviour
 3d1b89310e77c34bc0c8d7132231345c Assembly-CSharp.dll:Vuforia.WireframeBehaviour
 a822ae1544376e87883aa4d972b9ddfa Assembly-CSharp.dll:Vuforia.WebCamBehaviour
 bcc96913909f777492ef9c93126e33cd Assembly-CSharp.dll:Vuforia.SmartTerrainTrackerBehaviour
+b891708483a8ece71d0f2636154e4710 Assembly-CSharp.dll:.VoiceClips
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.TurnOffWordBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.ReconstructionFromTargetBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.HideExcessAreaBehaviour
@@ -142,7 +143,7 @@ bcc96913909f777492ef9c93126e33cd Assembly-CSharp.dll:Vuforia.SmartTerrainTracker
 387ef655a40a5a09b4b289e4961f5583 Assembly-CSharp.dll:Vuforia.CylinderTargetBehaviour
 67b48974ce9eba2f5f42615d194258b7 Assembly-CSharp.dll:Vuforia.MaskOutBehaviour
 4947f2d7d24162c13ec308fd74d09d41 Assembly-CSharp.dll:.GetTexture
-c58704c8c2629354db72186bab2d9a92 Assembly-CSharp.dll:Vuforia.duckTrackableEventHandler
+b2ed54838cf8b4a843d46bdbaa216fc7 Assembly-CSharp.dll:Vuforia.duckTrackableEventHandler
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -176,3 +177,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 e84542cb3e92e4144628f75925043808 Assembly-CSharp.dll:.ButtonAnimation
 d2a2bd333db22f480a8589e167314ecc Assembly-CSharp.dll:Vuforia.UserDefinedTargetBuildingBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.DistortionRenderingBehaviour
+f61c0793411f10cf5fbfa1473fef5ef2 Assembly-CSharp.dll:.BetterToggleGroup

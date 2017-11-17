@@ -7,8 +7,6 @@ using Vuforia;
 public class UIManager : MonoBehaviour{
 
 	public int mClickCount = 0;
-	public GameObject duck;
-	public GameObject capsule;
 	public GameObject arCamera;
 	public Camera cam;
 	public GameObject button;
@@ -40,6 +38,13 @@ public class UIManager : MonoBehaviour{
 
 	public float SlidingDist=800.0f;
 
+	private float m_fTouchMoveSpeed = 0.25f;
+	private bool m_bEnableCopyTargetModel=false;
+	private Touch currentTouch;
+
+	private int mCurrentLanguage = MyResources.LANGUAGE_KOR;
+	public GameObject LanguageToggleGroup;
+
 	private static UIManager instance;
 	public static UIManager Instance
 	{
@@ -54,6 +59,12 @@ public class UIManager : MonoBehaviour{
 			return instance;
 		}
 	}
+
+	public bool enableCopyTargetModel{
+		get { return m_bEnableCopyTargetModel; }
+		set { m_bEnableCopyTargetModel = enableCopyTargetModel; }
+	}
+
 
 	void Awake()
 	{
@@ -73,6 +84,8 @@ public class UIManager : MonoBehaviour{
 
 		RectTransform rt = canvas.GetComponent<RectTransform> ();
 		Debug.Log ("CANVAS width = " + rt.rect.width + ", height = " + rt.rect.height);
+
+		LanguageToggleGroup.GetComponent<BetterToggleGroup> ().OnChange += onChangedlanguageToggleGroup;
 	}
 
 	void Update()
@@ -90,6 +103,19 @@ public class UIManager : MonoBehaviour{
 //				color.a = 1.0f - mSlidingPanel.curveValue;
 //				img.color = color;
 //			}
+		}
+
+		if (m_bEnableCopyTargetModel) {
+
+			if (Input.touchCount > 0) {
+				currentTouch = Input.GetTouch (0);
+				if (currentTouch.phase == TouchPhase.Moved) {
+
+					copyTargetModel.transform.Rotate (Vector3.up, -currentTouch.deltaPosition.x*m_fTouchMoveSpeed);
+					
+					//Debug.Log ("Touch delta = " + currentTouch.deltaPosition.ToString ());
+				}
+			}
 		}
 
 		if (Application.platform == RuntimePlatform.Android) {
@@ -155,25 +181,34 @@ public class UIManager : MonoBehaviour{
 	{
 		if (texCameraTarget) {
 
-			capsule.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
-			capsule.transform.rotation = arCamera.transform.rotation;
-
-			capsule.GetComponent<Renderer> ().material.SetTexture ("_MainTex", texCameraTarget);
-
 			if (copyTargetModel) {
+
+				copyTargetModel.SetActive (true);
 
 				Camera cam = arCamera.GetComponentInChildren<Camera> ();
 				Vector3 pos = cam.transform.localToWorldMatrix.MultiplyPoint (new Vector3 (0.0f, -40.0f, 0.0f));
 
 				//copyTargetModel.transform.position = arCamera.transform.position + arCamera.transform.forward.normalized * mDistFromCamera;
 				copyTargetModel.transform.position = pos + arCamera.transform.forward.normalized * mDistFromCamera;
-				copyTargetModel.transform.rotation = arCamera.transform.rotation;
+				copyTargetModel.transform.rotation = arCamera.transform.rotation * Quaternion.AngleAxis (180.0f, new Vector3 (0.0f, 1.0f, 0.0f));
 
 				Renderer []meshes = copyTargetModel.GetComponentsInChildren<Renderer> ();
 				foreach (Renderer mesh in meshes) {
-					mesh.material.SetTexture ("_MainTex", texCameraTarget);
+
+					if(mesh.GetComponent<GetTexture>())
+						mesh.material.SetTexture ("_MainTex", texCameraTarget);
 				}
 				//copyTargetModel.GetComponentInChildren<Renderer> ().material.SetTexture ("_MainTex", texCameraTarget);
+
+				m_bEnableCopyTargetModel = true;
+
+				VoiceClips voices = copyTargetModel.GetComponent<VoiceClips> ();
+				if (voices) {
+					AudioSource audio = GetComponent<AudioSource> ();
+					audio.clip = voices.mAudioClips [Random.Range(0, 2)];
+					audio.Play ();
+				}
+
 			}
 
 			Debug.Log ("SetTexture (\"_MainTex\", texCameraTarget)");
@@ -192,10 +227,12 @@ public class UIManager : MonoBehaviour{
 		mSlidingPanel.reset (true, panelSetting.transform.position.x, panelSetting.transform.position.x-Screen.width*2.0f, 0.5f);
 		mSlidingPanel.mSlidingObject = panelSetting;
 		mSlidingPanel.mButtonObject = btnSetting;
+
+		btnSetting.GetComponent<ButtonAnimation> ().restoreButton ();
 	}
 	public void onClickHelpAR()
 	{
-		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(0);
+		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(0, mCurrentLanguage);
 
 		mSlidingPanel.reset (true, panelHelp.transform.position.x, (float)Screen.width / 2.0f, 0.5f);
 		mSlidingPanel.mSlidingObject = panelHelp;
@@ -209,7 +246,7 @@ public class UIManager : MonoBehaviour{
 	}
 	public void onClickHelpHolo()
 	{
-		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(1);
+		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(1, mCurrentLanguage);
 
 		mSlidingPanel.reset (true, panelHelp.transform.position.x, (float)Screen.width / 2.0f, 0.5f);
 		mSlidingPanel.mSlidingObject = panelHelp;
@@ -218,28 +255,55 @@ public class UIManager : MonoBehaviour{
 
 	public void onClickHelpExp()
 	{
-		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(2);
+		panelHelp.GetComponent<UnityEngine.UI.Image> ().sprite = MyResources.Instance.getHelpPannel(2, mCurrentLanguage);
 
 		mSlidingPanel.reset (true, panelHelp.transform.position.x, (float)Screen.width / 2.0f, 0.5f);
 		mSlidingPanel.mSlidingObject = panelHelp;
 		mSlidingPanel.mButtonObject = null;
 	}
 
-	void OnGUI()
+	public void onChangedlanguageToggleGroup(UnityEngine.UI.Toggle newActive)
 	{
-		int w = Screen.width, h = Screen.height;
+		if (newActive.name == "kor")
+			mCurrentLanguage = MyResources.LANGUAGE_KOR;
+		else if (newActive.name == "eng")
+			mCurrentLanguage = MyResources.LANGUAGE_ENG;
+		else
+			mCurrentLanguage = MyResources.LANGUAGE_CHA;
 
-		int posX = 0, posY = h * 15 / 100;
-		int fontHeight = 3;
-
-		GUIStyle style = new GUIStyle ();
-		Rect rect = new Rect (posX, posY, w, h * fontHeight / 100);
-		style.alignment = TextAnchor.UpperLeft;
-		style.fontSize = h * fontHeight / 100;
-		style.normal.textColor = new Color (1.0f, 1.0f, 0.0f, 1.0f);
-
-		string text = string.Format ("screen(" + w + ", " + h + "), panel x = " + panelSetting.transform.position.x);
-		GUI.Label (rect, text, style);
+		//Debug.Log(string.Format("changed Language {0}", mCurrentLanguage));
+		//Debug.Log(string.Format("LANGUAGE toggle changed {0} selected", newActive.name));
 	}
+
+	public void saveJPG(Texture2D texImage, string fileName)
+	{
+		byte []buffer = texImage.EncodeToJPG ();
+
+		Debug.Log("saveJPG filename = " + Application.dataPath + "/" + fileName);
+
+		System.IO.File.WriteAllBytes (Application.dataPath + "/" + fileName, buffer);
+
+//		System.IO.FileStream fileStream = new System.IO.FileStream (Application.dataPath + "/" + fileName, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+//		fileStream.Write (buffer, 0, 1);
+//		fileStream.Close ();
+	}
+
+
+//	void OnGUI()
+//	{
+//		int w = Screen.width, h = Screen.height;
+//
+//		int posX = 0, posY = h * 15 / 100;
+//		int fontHeight = 3;
+//
+//		GUIStyle style = new GUIStyle ();
+//		Rect rect = new Rect (posX, posY, w, h * fontHeight / 100);
+//		style.alignment = TextAnchor.UpperLeft;
+//		style.fontSize = h * fontHeight / 100;
+//		style.normal.textColor = new Color (1.0f, 1.0f, 0.0f, 1.0f);
+//
+//		string text = string.Format ("screen(" + w + ", " + h + "), panel x = " + panelSetting.transform.position.x);
+//		GUI.Label (rect, text, style);
+//	}
 
 }
